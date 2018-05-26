@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Upcoming events</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  </head>
+  <body>
+  <div class="container">
+    <% if (events) { %>
+      <% if (events.length > 0) { %>
+        <h1><%= events.length %> upcoming events</h1>
+        <ul>
+          <% for (var i = 0; i < events.length; i++) {%>
+            <li><%= events[i].summary %> (<%= events[i].start.dateTime || events[i].start.date %>)</li>
+          <% } %>
+        </ul>
+      <% } else { %>
+          <h1>No upcoming events</h1>
+      <% } %>
+    <% } %>
+  </div>
+  </body>
+</html>
